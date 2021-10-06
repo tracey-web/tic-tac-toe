@@ -1,18 +1,55 @@
 body {
-    background-color: azure;
+    margin: 0;
+    padding: 0;
+    background-color:azure;
     font-family: 'Press Start 2P', cursive;
-}
-#board {
-    border-spacing: 6px;
+  
   }
+  
+  #container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  
+  #board {
+    border-spacing: 6px;
+    margin: 0 auto;
+  }
+  
   #board td {
     border-color: #999;
     border-width: 3px;
-    border-style: dotted;
+    border-style: dashed;
     padding: 3px;
-    font-size: 36px;
+    font-size: 16px;
     text-align: center;
     cursor: pointer;
-    width: 3em;
-    height: 3em;
+    width: 9em;
+    height: 9em;
+  
+  }
+  
+  #board td:hover {
+    border-style: dashed; 
+    background-color: skyblue;
+  }
+  
+  .pushed {
+    border-style: dashed; 
+    background-color: #999;
+    border-color: #222;
+  }
+  
+  .winning-square {
+    background-color: #DDD !important;
+  }
+  
+  .selected {
+    display:inline-block;
+    padding:0.5em 1em;
+    min-width:3em;
+  }
+  
+  button {
+      float: right;
   }
