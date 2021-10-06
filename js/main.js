@@ -1,4 +1,4 @@
-console.log('Working...')
+// Project0 - Tic Tac Toe
 
 /*
 - need yourTurn & winner etc. variables
