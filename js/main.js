@@ -15,11 +15,14 @@
 
 $(document).ready(function(){
 
-  // Create board by selecting all of the td's into the variable 
-  const $squares = $("#board td"); 
+    // Create board by selecting all of the td's into the variable 
+    const $squares = $("#board td"); 
 
-  // The game states 
-  let $your_turn = $("#turn"); 
-  let $winner = $("#winner"); 
+    // The game states 
+    let $your_turn = $("#turn"); 
+    let $winner = $("#winner"); 
+
+    // Player turn boolean O = true, X = false 
+    let turn = false; 
 
 });
