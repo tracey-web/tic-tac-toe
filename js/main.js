@@ -13,6 +13,12 @@
 - no? are there empty cells? next player, else there is a tie 
 */ 
 
+// reset tournament function - needs to be outside document so scoped to the window
+function resetTournament() {
+    localStorage.clear(); 
+    window.location.reload();
+}
+
 $(document).ready(function () { 
     // set local storage for saving the number of wins for player x and player 0
     if(!localStorage.getItem("X-wins") || !localStorage.getItem("O-wins")) {
@@ -22,6 +28,8 @@ $(document).ready(function () {
 
     $("#x-total-wins").html(localStorage.getItem("X-wins"));
     $("#o-total-wins").html(localStorage.getItem("O-wins"));
+
+    
     
     // Create board by selecting all of the td's into the variable 
     const $squares = $("#board td"); 
@@ -63,11 +71,8 @@ $(document).ready(function () {
       turn = !turn; 
       $your_turn.html(other_player); 
  
-      // winner ? 
-      checkWin(); 
- 
-      // are there still empty squares on the board? 
-      if ($(".pushed").length === 9) { 
+      // is there a win and are there still empty squares on the board? 
+      if (!checkWin() && $(".pushed").length === 9) { 
         $your_turn.html("GAME OVER"); 
         $winner.html("It's a TIE!!"); 
       } 
@@ -142,7 +147,7 @@ $(document).ready(function () {
         $squares.eq(2).data("player") != null 
       ) { 
         // highlight winning $squares 
-        $squares.eq(2).addClass("winning-square"); 
+        $squares.eq(2).addClass("winning-square");
         $squares.eq(4).addClass("winning-square"); 
         $squares.eq(6).addClass("winning-square"); 
 
@@ -152,7 +157,8 @@ $(document).ready(function () {
         $winner.html($squares.eq(2).data("player")); 
         storeWin($squares.eq(2).data("player"));
         return true; 
-      }       
+      }
+      return false; 
     };
 
     const storeWin = function (winner) {

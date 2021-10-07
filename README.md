@@ -14,15 +14,10 @@ Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principl
 * :white_check_mark: Use semantic markup for HTML and CSS (adhere to best practices)
 
 ### Bonus Content Attepted
-These are for extra credit! Don't focus on these until you've hit the core requirements.
 
-* Keep track of multiple game rounds with a win counter
-* Allow players to customize their tokens (X, O, name, picture, etc)
-* Get inventive with your styling, e.g. use hover effects or animations to spiff things up
-Use LocalStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
-* Support custom board sizes: default is 3x3 but you could allow users to choose a larger board
-* Support networked multiplayer: https://www.firebase.com/ has a nice quickstart guide
-* TRICKIEST: Create an AI opponent: teach Javascript to play an unbeatable game against you
+* :white_check_mark: Keep track of multiple game rounds with a win counter
+* :white_check_mark: Get inventive with your styling, e.g. use hover effects or animations to spiff things up
+* :white_check_mark: Use LocalStorage to persist data locally to allow games to continue after page refresh or loss of internet connectivity
 
 ### Necessary Deliverables
 * :white_check_mark: A working game, built by you, hosted somewhere on the internet
