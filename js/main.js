@@ -14,6 +14,15 @@
 */ 
 
 $(document).ready(function () { 
+    // set local storage for saving the number of wins for player x and player 0
+    if(!localStorage.getItem("X-wins") || !localStorage.getItem("O-wins")) {
+        localStorage.setItem("X-wins", 0);
+        localStorage.setItem("O-wins", 0);
+    }
+
+    $("#x-total-wins").html(localStorage.getItem("X-wins"));
+    $("#o-total-wins").html(localStorage.getItem("O-wins"));
+    
     // Create board by selecting all of the td's into the variable 
     const $squares = $("#board td"); 
     
@@ -63,10 +72,9 @@ $(document).ready(function () {
         $winner.html("It's a TIE!!"); 
       } 
     }); 
+    
  
-    const checkWin = function () { 
- 
-      // check row horizontally 
+    const checkWin = function () {
       for (let i = 0; i < 3; i++) { 
         let j = 3 * i; 
         if ( 
@@ -83,7 +91,7 @@ $(document).ready(function () {
           $turn_prompt.hide(); 
           $your_turn.html("GAME OVER!"); 
           $winner.html($squares.eq(j).data("player")); 
-
+          storeWin($squares.eq(j).data("player"))
           return true; 
         } 
       } 
@@ -104,7 +112,7 @@ $(document).ready(function () {
           $turn_prompt.hide();  
           $your_turn.html("GAME OVER"); 
           $winner.html($squares.eq(i).data("player")); 
-
+          storeWin($squares.eq(i).data("player"))
           return true; 
         } 
       } 
@@ -114,9 +122,7 @@ $(document).ready(function () {
         $squares.eq(0).data("player") == $squares.eq(4).data("player") && 
         $squares.eq(0).data("player") == $squares.eq(8).data("player") && 
         $squares.eq(0).data("player") != null 
-      ) { 
-
-        // highlight winning squares 
+      ) {
         $squares.eq(0).addClass("winning-square"); 
         $squares.eq(4).addClass("winning-square"); 
         $squares.eq(8).addClass("winning-square"); 
@@ -125,7 +131,7 @@ $(document).ready(function () {
         $turn_prompt.hide();  
         $your_turn.html("GAME OVER!"); 
         $winner.html($squares.eq(0).data("player")); 
-
+        storeWin($squares.eq(0).data("player"));
         return true; 
       } 
 
@@ -144,8 +150,13 @@ $(document).ready(function () {
         $turn_prompt.hide();  
         $your_turn.html("GAME OVER!"); 
         $winner.html($squares.eq(2).data("player")); 
-
+        storeWin($squares.eq(2).data("player"));
         return true; 
-      } 
-    }; 
+      }       
+    };
+
+    const storeWin = function (winner) {
+        const currentWins = localStorage.getItem(`${ winner }-wins`)
+        localStorage.setItem(`${ winner }-wins`, parseInt(currentWins) + 1);
+    }
   });
