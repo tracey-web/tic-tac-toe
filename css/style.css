@@ -77,3 +77,13 @@ body {
       padding: 20px;
       margin-left: 50px;
   }
+
+  #turn-label {
+      padding: 20px;
+      text-align: center;
+  }
+
+  #turn {
+      padding: 20px;
+      text-align: center;
+  }

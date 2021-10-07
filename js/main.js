@@ -19,7 +19,8 @@ $(document).ready(function () {
     
     // The game states 
     let $your_turn = $("#turn"); 
-    let $winner = $("#winner"); 
+    let $winner = $("#winner");
+    let $turn_prompt = $("#turn-prompt"); 
     
     // Player turn boolean O = true, X = false 
     let turn = false; 
@@ -78,7 +79,8 @@ $(document).ready(function () {
           $squares.eq(j + 1).addClass("winning-square"); 
           $squares.eq(j + 2).addClass("winning-square"); 
 
-          // WINNER! 
+          // WINNER!
+          $turn_prompt.hide(); 
           $your_turn.html("GAME OVER!"); 
           $winner.html($squares.eq(j).data("player")); 
 
@@ -98,7 +100,8 @@ $(document).ready(function () {
           $squares.eq(i + 3).addClass("winning-square"); 
           $squares.eq(i + 6).addClass("winning-square"); 
 
-          // WINNER! 
+          // WINNER!
+          $turn_prompt.hide();  
           $your_turn.html("GAME OVER"); 
           $winner.html($squares.eq(i).data("player")); 
 
@@ -118,7 +121,8 @@ $(document).ready(function () {
         $squares.eq(4).addClass("winning-square"); 
         $squares.eq(8).addClass("winning-square"); 
 
-        // WINNER!!! 
+        // WINNER!!!
+        $turn_prompt.hide();  
         $your_turn.html("GAME OVER!"); 
         $winner.html($squares.eq(0).data("player")); 
 
@@ -136,7 +140,8 @@ $(document).ready(function () {
         $squares.eq(4).addClass("winning-square"); 
         $squares.eq(6).addClass("winning-square"); 
 
-        // WINNER!!! 
+        // WINNER!!!
+        $turn_prompt.hide();  
         $your_turn.html("GAME OVER!"); 
         $winner.html($squares.eq(2).data("player")); 
 
