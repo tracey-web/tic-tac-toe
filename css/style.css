@@ -1,14 +1,21 @@
 body {
     margin: 0;
     padding: 0;
-    background-color:azure;
+    background-color:black;
     font-family: 'Press Start 2P', cursive;
   
   }
   
   #container {
+    background-color: black;
     max-width: 640px;
+    height: 750px;
     margin: 0 auto;
+    border-radius: 10px;
+    border: solid 4px blue;
+    color: yellow;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   
   #board {
@@ -17,39 +24,56 @@ body {
   }
   
   #board td {
-    border-color: #999;
+    border-color: blue;
     border-width: 3px;
     border-style: dashed;
     padding: 3px;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
-    width: 9em;
-    height: 9em;
+    width: 7em;
+    height: 7em;
   
   }
   
   #board td:hover {
     border-style: dashed; 
-    background-color: skyblue;
+    background-color: grey;
   }
   
   .pushed {
-    border-style: dashed; 
-    background-color: #999;
-    border-color: #222;
+    background-color: #fff;
+    color: #000;
   }
   
   .winning-square {
-    background-color: #DDD !important;
+    background-color: lime !important;
   }
   
   .selected {
     display:inline-block;
     padding:0.5em 1em;
-    min-width:3em;
+    min-width: 2em;
+
   }
   
   button {
+      border-radius: 50%;
+      background: red;
+      width: 150px;
+      height: 150px;
       float: right;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5em;
+      margin-right: 50px;
+  }
+
+  h1 {
+      padding-top: 20px;
+      text-align: center;
+  }
+
+  .label {
+      padding: 20px;
+      margin-left: 50px;
   }
