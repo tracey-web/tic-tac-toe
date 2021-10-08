@@ -83,8 +83,8 @@ $(document).ready(function () {
       for (let i = 0; i < 3; i++) { 
         let j = 3 * i; 
         if ( 
-          $squares.eq(j).data("player") == $squares.eq(j + 1).data("player") && 
-          $squares.eq(j).data("player") == $squares.eq(j + 2).data("player") && 
+          $squares.eq(j).data("player") === $squares.eq(j + 1).data("player") && 
+          $squares.eq(j).data("player") === $squares.eq(j + 2).data("player") && 
           $squares.eq(j).data("player") != null 
         ) { 
           // Highlight wining squares 
@@ -104,8 +104,8 @@ $(document).ready(function () {
       // check row vertically 
       for (let i = 0; i < 3; i++) { 
         if ( 
-          $squares.eq(i).data("player") == $squares.eq(i + 3).data("player") && 
-          $squares.eq(i).data("player") == $squares.eq(i + 6).data("player") && 
+          $squares.eq(i).data("player") === $squares.eq(i + 3).data("player") && 
+          $squares.eq(i).data("player") === $squares.eq(i + 6).data("player") && 
           $squares.eq(i).data("player") != null 
         ) { 
           // highlight winning squares 
@@ -124,8 +124,8 @@ $(document).ready(function () {
 
       // check row diagonally left to right 
       if ( 
-        $squares.eq(0).data("player") == $squares.eq(4).data("player") && 
-        $squares.eq(0).data("player") == $squares.eq(8).data("player") && 
+        $squares.eq(0).data("player") === $squares.eq(4).data("player") && 
+        $squares.eq(0).data("player") === $squares.eq(8).data("player") && 
         $squares.eq(0).data("player") != null 
       ) {
         $squares.eq(0).addClass("winning-square"); 
@@ -142,8 +142,8 @@ $(document).ready(function () {
 
       // check squares diagonally right to left 
       if ( 
-        $squares.eq(2).data("player") == $squares.eq(4).data("player") && 
-        $squares.eq(2).data("player") == $squares.eq(6).data("player") && 
+        $squares.eq(2).data("player") === $squares.eq(4).data("player") && 
+        $squares.eq(2).data("player") === $squares.eq(6).data("player") && 
         $squares.eq(2).data("player") != null 
       ) { 
         // highlight winning $squares 

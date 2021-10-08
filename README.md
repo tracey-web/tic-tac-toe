@@ -42,4 +42,6 @@ Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principl
 
 ### Coding process
 
+Idea was to consider the board squares an array and indexOf to get the values into the board but with more jQuery functions. I realised that it was just about displaying as a grid.
+
 :speech_balloon: more to come.
